@@ -4,7 +4,7 @@ import { provideRouter } from '@angular/router';
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 
-import { routes } from './app.routes';
+import { routes } from './global/routing/app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
