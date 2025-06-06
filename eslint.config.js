@@ -38,6 +38,15 @@ module.exports = tseslint.config(
       ...angular.configs.templateRecommended,
       ...angular.configs.templateAccessibility,
     ],
-    rules: {},
+    rules: {
+      "@angular-eslint/template/accessibility-elements-content": [
+        "error",
+        {
+          button: {
+            "require-content": false,
+          },
+        },
+      ],
+    },
   }
 );

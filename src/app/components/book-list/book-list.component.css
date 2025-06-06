@@ -1,0 +1,90 @@
+/* example for using the Book interface */
+.book-list {
+  padding: 10rem;
+  background-color: var(--surface-a);
+
+  .list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    h2 {
+      margin: 0;
+      color: var(--text-color);
+      font-weight: 500;
+    }
+
+    button {
+      height: 2rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1rem));
+    gap: 2rem;
+  }
+
+  .book-card {
+    border-radius: 1rem !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 5);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-header {
+      padding: 2rem;
+      border-bottom: 1px solid var(--border-color);
+
+      h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: var(--text-color);
+      }
+
+      .author {
+        display: block;
+        margin-top: 0.5rem;
+        color: var(--text-color-secondary);
+        font-weight: normal;
+      }
+    }
+
+    .card-content {
+      padding: 1rem;
+
+      .book-details {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          display: flex;
+          align-items: center;
+          margin-bottom: 0.5rem;
+
+          i {
+            margin-right: 0.5rem;
+            color: var(--text-color-secondary);
+          }
+        }
+      }
+
+      .review-section {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border-color);
+
+        .review-text {
+          margin: 0.5;
+          line-height: 1.5;
+          color: var(--text-color-secondary);
+        }
+      }
+    }
+  }
+}
