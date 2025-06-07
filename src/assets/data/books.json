@@ -1,0 +1,24 @@
+[
+  {
+    "id": "1",
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "genre": "Fantasy",
+    "coverUrl": "https://m.media-amazon.com/images/I/51dOacmuzvL._SY445_SX342_.jpg",
+    "startDate": "2024-05-01T00:00:00.000Z",
+    "endDate": "2024-05-10T00:00:00.000Z",
+    "rating": 5,
+    "review": "Magical and captivating. A timeless classic."
+  },
+  {
+    "id": "2",
+    "title": "A Court of Thorns and Roses",
+    "author": "Sarah J. Maas",
+    "genre": "Fantasy Romance",
+    "coverUrl": "https://images.thalia.media/00/-/9e89c476d38340b0acb69a660bd01815/a-court-of-thorns-and-roses-taschenbuch-sarah-j-maas-englisch.jpeg",
+    "startDate": "2024-06-01T00:00:00.000Z",
+    "endDate": "2024-06-12T00:00:00.000Z",
+    "rating": 4,
+    "review": "Intriguing world-building with strong characters and romantic tension."
+  }
+]
