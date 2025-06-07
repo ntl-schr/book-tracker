@@ -1,1 +1,50 @@
-<p>sidemenu works!</p>
+<div class="layout">
+  <!-- HEADER -->
+  <app-header></app-header>
+
+  <!-- BODY -->
+  <div class="layout-body">
+    <!-- SIDEBAR -->
+    <div class="sidebar" [ngClass]="{ collapsed: isCollapsed }">
+      <div class="toggle">
+        <button
+          aria-label="Show/expand menu"
+          class="toggle-btn"
+          (click)="toggleSidebar()"
+        >
+          <i
+            class="fas"
+            [ngClass]="isCollapsed ? 'fa-arrow-right' : 'fa-arrow-left'"
+          ></i>
+        </button>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a routerLink="/overview" routerLinkActive="active">
+              <i class="fas fa-home"></i>
+              @if(!isCollapsed) {<span>Overview</span>}
+            </a>
+          </li>
+          <li>
+            <a routerLink="/books" routerLinkActive="active">
+              <i class="fas fa-book"></i>
+              @if(!isCollapsed) {<span>Books</span>}
+            </a>
+          </li>
+          <li>
+            <a routerLink="/stats" routerLinkActive="active">
+              <i class="fas fa-chart-bar"></i>
+              @if(!isCollapsed) {<span>Stats</span>}
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

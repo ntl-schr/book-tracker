@@ -1,0 +1,101 @@
+/* Basic layout structure */
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Wrapper for Sidebar + Main Content */
+.layout-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Sidebar left */
+.sidebar {
+  width: 220px;
+  background-color: var(--surface-200);
+  padding: 1rem;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+/* Sidebar-Button */
+.toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.toggle-btn {
+  background-color: #374151;
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+}
+
+.toggle-btn:hover {
+  background-color: #1f2937;
+  transform: scale(1.1);
+}
+
+/* Sidebar Navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  margin: 1rem 0;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--primary-color);
+}
+
+nav i {
+  width: 24px;
+  text-align: center;
+  margin-right: 0.5rem;
+}
+
+nav a.active {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+/* Header */
+app-header {
+  height: 60px;
+  background-color: var(--surface-0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  z-index: 10;
+}
