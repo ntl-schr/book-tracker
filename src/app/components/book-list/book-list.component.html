@@ -1,4 +1,3 @@
-<!-- example for using the Book interface -->
 <div class="book-list">
   <div class="list-header">
     <h2>Book list</h2>
@@ -6,22 +5,26 @@
   </div>
 
   <div class="card-container">
+    @for(book of books; track book) {
     <p-card class="book-card">
       <div class="card-header">
         <h3>{{ book.title }}</h3>
         <span class="author">{{ book.author }}</span>
       </div>
-
       <div class="card-content">
         <ul class="book-details">
           <li><i class="pi pi-tag"></i> Genre: {{ book.genre }}</li>
+          @if(book.rating){
           <li><i class="pi pi-star"></i> Rating: {{ book.rating }}/5</li>
+          }
         </ul>
-
-        <div *ngIf="book.review" class="review-section">
+        @if(book.review) {
+        <div class="review-section">
           <p class="review-text">{{ book.review }}</p>
         </div>
+        }
       </div>
     </p-card>
+    }
   </div>
 </div>

@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { Book } from '../../global/dtos/book.dto';
+import { BookService } from '../../global/services/book.service';
 
 @Component({
   selector: 'app-book-list',
@@ -10,22 +11,16 @@ import { Book } from '../../global/dtos/book.dto';
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.css',
 })
-export class BookListComponent {
-  // displays a list of all books, optionally filterable or sortable
+// displays a list of all books, optionally filterable or sortable
+export class BookListComponent implements OnInit {
+  books: Book[] = [];
 
-  // example for using the Book interface
-  book: Book = {
-    id: '1',
-    title: "Harry Potter and the Philosopher's Stone",
-    author: 'J.K. Rowling',
-    genre: 'Fantasy',
-    rating: 5,
-    review: `
-    This first book in the Harry Potter series is a masterpiece of modern fantasy literature.
-    The story of an orphan boy who discovers he's a wizard has captivated millions of readers worldwide.
-    Rowling masterfully creates a magical world that enchants both children and adults alike.
-    The character development is profound and authentic, while the plot is engaging and full of surprises.
-    A must-read for every fantasy lover!
-  `,
-  };
+  constructor(private bookService: BookService) {}
+
+  ngOnInit(): void {
+    this.bookService.getBooks().subscribe({
+      next: (data) => (this.books = data),
+      error: (err) => console.error('Error loading books:', err),
+    });
+  }
 }
