@@ -1,3 +1,10 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+
+/* force light mode for now */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light !important;
+  }
+}
